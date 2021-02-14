@@ -2,24 +2,23 @@ from func import dyncrypt , logo
 
 print (logo)
 
-direction = input("Type 'e' to encrypt, type 'd' to decrypt:\n")
+runtime = True
 
-if direction == "e":
-    text = input("\nType your message to encrypt :\n").lower()
+while runtime == True:
+    direction = input("Type 'e' to encrypt, type 'd' to decrypt:\n")
+    text = input("\nType your message :\n").lower()
     shift = int(input("\nType the shift number : \n"))
-    dyncrypt(direc=direction,dstr=text,dshi=shift)
-elif direction == "d":
-    text = input("\nType your message to dycrypt :\n").lower()
-    shift = int(input("\nType the shift number : \n"))
-    dyncrypt(direc=direction,dstr=text,dshi=shift)
-else:
-    print(f"you gave wrong direction {direction}")
+    if direction == "e":
+        dyncrypt(direc=direction,dstr=text,dshi=shift)
+    elif direction == "d":
+        dyncrypt(direc=direction,dstr=text,dshi=shift)
+    else:
+        print(f"you gave wrong direction {direction}")
 
+    want = input("type y to continue. n to exit.")
 
-
-
-
-
+    if want == "n":
+        runtime = False
 
 
 
